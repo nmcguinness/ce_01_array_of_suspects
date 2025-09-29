@@ -14,11 +14,16 @@ public class LicensePlate{
 
     public LicensePlate(String rawLicensePlate)
     {
+        //TODO - deal with no string, test parts for null
         String[] parts = rawLicensePlate.split("\\s");
 
+        if(parts.length == 3)
+        {
+            this.year = parts[0];  "131"
+            this.county = parts[1];
+            this.number = Integer.parseInt(parts[2]);
+        }
     }
-
-
 
     //region Getters & Setters
     public String getYear() {

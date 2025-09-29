@@ -33,7 +33,6 @@ public class LicensePlate{
         boolean isNumberValid
                 = this.number.matches("[0-9]*6[0-9]*6[0-9]*");
 
-        //"191"
         int sum = 0;
         for(int i = 0; i < this.year.length(); i++)
         {
@@ -41,7 +40,6 @@ public class LicensePlate{
             System.out.println(yearPart);
             sum += yearPart;
         }
-
         return isTargetCounty && isNumberValid && (sum == 10);
     }
 

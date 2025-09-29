@@ -19,10 +19,17 @@ public class LicensePlate{
 
         if(parts.length == 3)
         {
-            this.year = parts[0];  "131"
+            this.year = parts[0];  //"131"
             this.county = parts[1];
             this.number = Integer.parseInt(parts[2]);
         }
+    }
+
+    public boolean Validate()
+    {
+        boolean isTargetCounty
+                = this.county.matches(".{0,1}L.{0,1}");
+        return isTargetCounty;
     }
 
     //region Getters & Setters

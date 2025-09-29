@@ -9,7 +9,7 @@ public class LicensePlate{
     //region Fields
     private String year;
     private String county;
-    private int number;
+    private String number;
     //endregion
 
     public LicensePlate(String rawLicensePlate)
@@ -21,7 +21,7 @@ public class LicensePlate{
         {
             this.year = parts[0];  //"131"
             this.county = parts[1];
-            this.number = Integer.parseInt(parts[2]);
+            this.number = parts[2];
         }
     }
 
@@ -29,7 +29,11 @@ public class LicensePlate{
     {
         boolean isTargetCounty
                 = this.county.matches(".{0,1}L.{0,1}");
-        return isTargetCounty;
+
+        boolean isNumberValid
+                = this.number.matches("[0-9]*6[0-9]*6[0-9]*");
+
+        return isTargetCounty && isNumberValid;
     }
 
     //region Getters & Setters
@@ -49,11 +53,11 @@ public class LicensePlate{
         this.county = county;
     }
 
-    public int getNumber() {
+    public String getNumber() {
         return number;
     }
 
-    public void setNumber(int number) {
+    public void setNumber(String number) {
         this.number = number;
     }
     //endregion

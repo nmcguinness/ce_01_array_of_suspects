@@ -11,7 +11,7 @@ public class Main {
         //read contents
 
         //parse contents into LicensePlate
-        LicensePlate l1 = new LicensePlate("191 L 12345");
+        LicensePlate l1 = new LicensePlate("191 L 166");
         System.out.println(l1);
 
         //test parsed contents

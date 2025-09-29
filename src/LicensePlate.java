@@ -33,6 +33,8 @@ public class LicensePlate{
         boolean isNumberValid
                 = this.number.matches("[0-9]*6[0-9]*6[0-9]*");
 
+
+
         return isTargetCounty && isNumberValid;
     }
 

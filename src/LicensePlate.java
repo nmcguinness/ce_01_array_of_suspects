@@ -33,9 +33,16 @@ public class LicensePlate{
         boolean isNumberValid
                 = this.number.matches("[0-9]*6[0-9]*6[0-9]*");
 
-        int x = 1;
+        //"191"
+        int sum = 0;
+        for(int i = 0; i < this.year.length(); i++)
+        {
+            int yearPart = this.year.charAt(i) - 48;
+            System.out.println(yearPart);
+            sum += yearPart;
+        }
 
-        return isTargetCounty && isNumberValid;
+        return isTargetCounty && isNumberValid && (sum == 10);
     }
 
     //region Getters & Setters
